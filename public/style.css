@@ -7,3 +7,107 @@ footer {
   background-color: white;
   padding: 12px;
 }
+
+h1.white {
+  color: #fff;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+h3.white {
+  color: #fff;
+  padding-left: 30px;
+  padding-top: -100px;
+}
+
+button.white {
+  fill: none;
+  border-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10;
+  padding-bottom: 10;
+  border-radius: 10px;
+}
+
+div.titelcard {
+  background-image: url("/Images/Schottland.jpg"); /* Pfad zum Bild */
+  background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
+  background-position: center; /* Positioniert das Bild in der Mitte */
+  background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
+  height: 300px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  margin: 0; /* Entfernt den Standardrand */
+  border-radius: 30px;
+}
+
+/* Forms */
+/* Container für das Formular */
+.form-container {
+  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
+  padding: 20px;
+  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für mehr Tiefe */
+  width: 100%;
+  max-width: 400px; /* Begrenzte Breite des Formulars */
+}
+
+/* Allgemeines Styling für die Formularelemente */
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form label {
+  width: 120px; /* Festgelegte Breite für das Label */
+  margin-right: 10px; /* Abstand zwischen Label und Input */
+}
+
+/* Styling für die Input-Felder */
+.form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px; /* Abgerundete Ecken für die Input-Felder */
+  font-size: 16px;
+  background-color: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover- und Fokus-Effekte für Input-Felder */
+.form input:hover,
+.form input:focus {
+  border-color: #007bff; /* Blauer Rand bei Fokus */
+}
+
+/* Button Styling */
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 30px; /* Abgerundete Ecken für den Button */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover-Effekt für den Button */
+.form-container button:hover {
+  background-color: #ccc;
+}
+
+.form-container p {
+  color: #333;
+}
+
+.form-container a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.form-container a:hover {
+  color: #007bff;
+}

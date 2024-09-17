@@ -17,6 +17,22 @@ app.get("/login", async function (req, res) {
   res.render("login", {});
 });
 
+app.get("/register", async function (req, res) {
+  res.render("register", {});
+});
+
+app.get("/account", async function (req, res) {
+  res.render("account", {});
+});
+
+app.get("/blogdetail", async function (req, res) {
+  res.render("blogdetail", {});
+});
+
+app.get("/post", async function (req, res) {
+  res.render("post", {});
+});
+
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });

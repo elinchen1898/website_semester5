@@ -1,8 +1,26 @@
-<h1>Login</h1>
-<form>
-  username:
-  <input type="name" /><br />
-  password:
-  <textarea></textarea><br />
-  <input type="submit" value="Senden" />
-</form>
+<div class="form-container">
+
+  <h1>Login</h1>
+  <p>Please enter your login data</p>
+
+  <form action="/account">
+
+    <div class="form">
+      <label for="username"><img src="" alt="icon for user" /></label>
+      <input type="text" id="username" name="username" required />
+    </div>
+
+    <div class="form">
+      <label for="password"><img src="" alt="icon for password" /></label>
+      <input type="password" id="password" name="password" required />
+    </div>
+
+    <div class="form">
+      <button type="submit">login</button>
+    </div>
+
+  </form>
+
+  <p>Don't have an account yet?
+    <a href="/register">Register now!</a></p>
+</div>
