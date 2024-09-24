@@ -3,6 +3,13 @@
 <p>Your e-mail: {{e-mail}}</p>
 
 <h3>Your posts</h3>
+{{#myposts}}
+  <div class="post">
+    {{titel}}
+    <img src="/uploads/{{bild1}}" />
+  </div>
+{{/myposts}}
+
 <!-- Deine Posts-->
 
 <h3>Liked posts</h3>

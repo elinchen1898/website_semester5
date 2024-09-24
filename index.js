@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "restless_violet_3754",
+  host: "bbz.cloud",
+  database: "restless_violet_3754",
+  password: "a0c3e114642e9d3cdc0c528ac026d55a",
+  port: 30211,
 });
 
 /* Startseite */
@@ -22,7 +22,8 @@ app.get("/register", async function (req, res) {
 });
 
 app.get("/account", async function (req, res) {
-  res.render("account", {});
+  const myposts = await app.locals.pool.query("select * from posts");
+  res.render("account", { myposts: myposts.rows });
 });
 
 app.get("/blogdetail", async function (req, res) {

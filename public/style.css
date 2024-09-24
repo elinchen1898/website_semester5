@@ -16,18 +16,25 @@ h1.white {
 
 h3.white {
   color: #fff;
+  font-weight: 100;
   padding-left: 30px;
-  padding-top: -100px;
+  margin-top: -10px;
 }
 
 button.white {
+  background-color: transparent;
   color: #fff;
-  border-color: #fff;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 7;
   padding-bottom: 7;
+  margin-left: 2em;
   border-radius: 70px;
+  border: 2px solid white;
+}
+button.white:hover,
+button.white:focus {
+  background-color: #6f6f6f2b;
 }
 
 div.titelcard {
@@ -39,14 +46,16 @@ div.titelcard {
   margin: 0; /* Entfernt den Standardrand */
   border-radius: 30px;
 }
+h2 {
+  color: #000000;
+}
 
 /* Forms */
-/* Container für das Formular */
+/* Container für das Formular - graue box*/
 .form-container {
   background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
   padding: 20px;
   border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für mehr Tiefe */
   width: 100%;
   max-width: 400px; /* Begrenzte Breite des Formulars */
 }
@@ -67,10 +76,10 @@ div.titelcard {
 .form input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 30px; /* Abgerundete Ecken für die Input-Felder */
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid black;
   font-size: 16px;
-  background-color: #fff;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -79,7 +88,7 @@ div.titelcard {
 /* Hover- und Fokus-Effekte für Input-Felder */
 .form input:hover,
 .form input:focus {
-  border-color: #007bff; /* Blauer Rand bei Fokus */
+  border-bottom: 1px solid #838383; /* Blauer Rand bei Fokus */
 }
 
 /* Button Styling */
@@ -93,12 +102,10 @@ div.titelcard {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 /* Hover-Effekt für den Button */
 .form-container button:hover {
   background-color: #ccc;
 }
-
 .form-container p {
   color: #333;
 }
