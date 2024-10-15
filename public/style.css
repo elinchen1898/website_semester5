@@ -43,15 +43,31 @@ div.titelcard {
   background-position: center; /* Positioniert das Bild in der Mitte */
   background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
   height: 300px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
-  margin: 0; /* Entfernt den Standardrand */
-  border-radius: 30px;
+  margin: 20px; /* Entfernt den Standardrand */
+  border-radius: 17px;
 }
+
+h4.white {
+  position: absolute;
+  bottom: -240;
+  color: #ffffff;
+}
+
 h2 {
   color: #000000;
 }
 
+.img {
+  height: 200px;
+}
+
+/* Header */
+
 /* Forms */
 /* Container für das Formular - graue box*/
+.form img {
+  height: 2em;
+}
 .form-container {
   background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
   padding: 20px;
@@ -61,6 +77,18 @@ h2 {
 }
 
 /* Allgemeines Styling für die Formularelemente */
+
+div.destination1 {
+  background-image: url("/Images/Japan.jpg");
+  background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
+  background-position: center; /* Positioniert das Bild in der Mitte */
+  background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
+  height: 210px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  width: 160px;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+
 .form {
   display: flex;
   align-items: center;

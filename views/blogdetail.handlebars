@@ -1,1 +1,14 @@
 <h1>Detail</h1>
+{{#myposts}}
+  <div class="head_blog">
+    <h3> {{created_at}}</h3>
+    <h1> {{titel}}</h1>
+    <img src="/uploads/{{bild1}}" class="img" />
+  </div>
+  <div class="body_blog">
+    <p>{{inhalt}}</p>
+    <img src="/uploads/{{bild2}}" alt="bild2" class="img" />
+    <img src="/uploads/{{bild3}}" alt="bild3" class="img" />
+    <img src="/uploads/{{bild4}}" alt="bild4" class="img" />
+  </div>
+{{/myposts}}

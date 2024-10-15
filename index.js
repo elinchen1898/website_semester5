@@ -23,11 +23,13 @@ app.get("/register", async function (req, res) {
 
 app.get("/account", async function (req, res) {
   const myposts = await app.locals.pool.query("select * from posts");
-  res.render("account", { myposts: myposts.rows });
+  const users = await app.locals.pool.query("select * from users");
+  res.render("account", { users: users.rows, myposts: myposts.rows });
 });
 
 app.get("/blogdetail", async function (req, res) {
-  res.render("blogdetail", {});
+  const myposts = await app.locals.pool.query("select * from posts");
+  res.render("blogdetail", { myposts: myposts.rows });
 });
 
 app.get("/post", async function (req, res) {
