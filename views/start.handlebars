@@ -1,13 +1,26 @@
-<div class="titelcard">
-  <h1 class="white">Explor the natur <br /> of scottland </h1>
-  <h3 class="white">A place full of Secrets.</h3>
-  <button class="white">View Blog</button>
+<body>
+  
+</body><div class="titelcard">
+  <h1 class="white">{{firstPost.titel}} </h1>
+  <h3 class="white">{{firstPost.inhalt}}</h3>
+  <a href="/blogdetail/{{firstPost.id}}"><button class="white">View Blog</button></a>
 </div>
 
 <h2>Explor the natur of scottland</h2>
+<h3 class="black">Enjoy the journey through our post</h3>
 
-<div class="destination1">
-  <h4 class="white">Kyoto</h4>
-  <p class="white">The timeless beatuy</p>
-  <a href="/blogdetail/{{id}}">more</a>
+<div class="flex">
+  {{#posts}}
+    <a href="/blogdetail/{{id}}">
+      <div
+        class="destination"
+        style="background-image: url(/Images/Schottland.jpg);"
+      >
+        <h4 class="white">{{titel}}</h4>
+        <p class="white">{{inhalt}}</p>
+      </div>
+    </a>
+  {{/posts}}
 </div>
+
+</body>

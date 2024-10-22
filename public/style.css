@@ -1,5 +1,5 @@
 * {
-  font-family: "Poppins", "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 header,
@@ -8,17 +8,46 @@ footer {
   padding: 12px;
 }
 
+body {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.titelcard {
+  padding-right: 500px;
+}
+
 h1.white {
   color: #fff;
   padding-left: 30px;
-  padding-top: 30px;
+  padding-top: 50px;
+  font-size: 64px;
+  font-weight: 20px;
 }
-
+h1.head_blog {
+  color: black;
+  font-size: 64px;
+}
 h3.white {
   color: #fff;
-  font-weight: 100;
+  font-weight: lighter;
   padding-left: 30px;
-  margin-top: -10px;
+  margin-top: -20px;
+  font-size: 30px;
+}
+
+h3.black {
+  color: #000000;
+  font-weight: lighter;
+  font-size: 30px;
+  margin-top: -50px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 button.white {
@@ -37,28 +66,41 @@ button.white:focus {
   background-color: #6f6f6f2b;
 }
 
+.flex {
+  display: flex;
+  column-gap: 25px;
+  flex-wrap: wrap;
+}
+
 div.titelcard {
   background-image: url("/Images/Schottland.jpg"); /* Pfad zum Bild */
   background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
   background-position: center; /* Positioniert das Bild in der Mitte */
   background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
-  height: 300px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  height: 500px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
   margin: 20px; /* Entfernt den Standardrand */
   border-radius: 17px;
 }
 
 h4.white {
   position: absolute;
-  bottom: -240;
-  color: #ffffff;
+  bottom: 0px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+p.white {
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  padding-left: 0.5em;
+  font-size: small;
 }
 
 h2 {
   color: #000000;
-}
-
-.img {
-  height: 200px;
+  font-size: 50px;
+  text-align: center;
 }
 
 /* Header */
@@ -78,15 +120,17 @@ h2 {
 
 /* Allgemeines Styling für die Formularelemente */
 
-div.destination1 {
+div.destination {
+  padding-left: 50px;
   background-image: url("/Images/Japan.jpg");
   background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
   background-position: center; /* Positioniert das Bild in der Mitte */
   background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
-  height: 210px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
-  width: 160px;
+  height: 480px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  width: 300px;
   margin-left: 20px;
   border-radius: 15px;
+  position: relative;
 }
 
 .form {
@@ -145,4 +189,28 @@ div.destination1 {
 
 .form-container a:hover {
   color: #007bff;
+}
+
+/* Blogdetail page */
+.head_blog img {
+  height: 500px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  border-radius: 17px;
+}
+
+.blog_img {
+  display: flex;
+  flex-wrap: wrap; /* Damit die Bilder auf zwei Linien umgebrochen werden */
+  gap: 5px;
+}
+
+.blog_img img {
+  width: 49%; /* Zwei Bilder links, die je 49% der Breite haben */
+  margin-bottom: 10px; /* Abstand zwischen den Bildern */
+  border-radius: 17px;
+}
+
+.blog_img img:last-child {
+  width: 49%; /* Das rechte Bild nimmt ebenfalls 49% ein */
+  height: 100%; /* Passt die Höhe an die beiden linken Bilder an */
+  object-fit: cover; /* Verhindert Bildverzerrung */
 }
