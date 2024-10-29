@@ -6,8 +6,17 @@
   <a href="/blogdetail/{{firstPost.id}}"><button class="white">View Blog</button></a>
 </div>
 
-<h2>Explor the natur of scottland</h2>
+<h2>Welcome to our Travel-Page </h2>
 <h3 class="black">Enjoy the journey through our post</h3>
+
+<div class="post">
+  <div class="form">
+    <a href="/post"><img
+      src="/icons/upload.png"
+      alt="icon post"
+    /></a>
+  </div>
+</div>
 
 <div class="flex">
   {{#posts}}
@@ -17,7 +26,8 @@
         style="background-image: url(/Images/Schottland.jpg);"
       >
         <h4 class="white">{{titel}}</h4>
-        <p class="white">{{inhalt}}</p>
+        <p class="white">{{untertitel}}</p>
+        <div class="heart"> <img src="/icons/herz.png"></div>
       </div>
     </a>
   {{/posts}}

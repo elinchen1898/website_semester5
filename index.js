@@ -40,6 +40,22 @@ app.get("/post", async function (req, res) {
   res.render("post", {});
 });
 
+app.post("/create_post", async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO posts (titel, untertitel, inhalt, bild1, bild2, bild3, bild4, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, current_timestamp)",
+    [
+      req.body.titel,
+      req.body.untertitel,
+      req.body.inhalt,
+      req.body.bild1,
+      req.body.bild2,
+      req.body.bild3,
+      req.body.bild4,
+    ]
+  );
+  res.redirect("/");
+});
+
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
