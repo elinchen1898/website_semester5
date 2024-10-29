@@ -37,23 +37,27 @@ app.get("/register", async function (req, res) {
 });
 
 app.post("/register", async function (req, res) {
-  //check if username is equal to an already used username
+  // Check if username already exists
   const result = await app.locals.pool.query(
     "SELECT username FROM users WHERE username = $1",
     [req.body.username]
   );
 
-  if (result.rows.length > 1) {
-    res.status(401).send("Invalid username");
-  } else {
-    await app.locals.pool.query(
-      "INSERT INTO users (username, email, passwort) VALUES ($1, $2, $3)",
-      [req.body.username, req.body.email, req.body.passwort]
-    );
-    res.redirect("/");
+  if (result.rows.length > 0) {
+    // Change > 1 to > 0
+    return res.status(401).send("Username already exists");
   }
+
+  // Insert new user
+  await app.locals.pool.query(
+    "INSERT INTO users (username, email, passwort) VALUES ($1, $2, $3)",
+    [req.body.username, req.body.email, req.body.passwort]
+  );
+
+  res.redirect("/account");
 });
 
+/* todo: account anzeige, name der eingelogten person, posts der eingelogten person*/
 app.get("/account", async function (req, res) {
   const myposts = await app.locals.pool.query("select * from posts");
   const users = await app.locals.pool.query("select * from users");
