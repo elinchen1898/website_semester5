@@ -1,32 +1,22 @@
 <div class="form-container">
-
   <h1>Login</h1>
   <p>Please enter your login data</p>
 
-  <form action="/account">
-
+  <form action="/login" method="POST">
     <div class="form">
-      <label for="username"><img
-          src="/icons/user.png"
-          alt="icon for user" 
-        /></label>
+      <label for="username"><img src="/icons/user.png" alt="icon for user" /></label>
       <input type="text" id="username" name="username" required />
     </div>
 
     <div class="form">
-      <label for="password"><img
-          src="/icons/padlock.png"
-          alt="icon for password"
-        /></label>
-      <input type="password" id="password" name="password" required />
+      <label for="password"><img src="/icons/padlock.png" alt="icon for password" /></label>
+      <input type="password" id="password" name="passwort" required />
     </div>
 
     <div class="form">
-      <button type="submit">login</button>
+      <button type="submit">Login</button>
     </div>
-
   </form>
 
-  <p>Don't have an account yet?
-    <a href="/register">Register now!</a></p>
+  <p>Don't have an account yet? <a href="/register">Register now!</a></p>
 </div>

@@ -15,12 +15,43 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
-app.get("/login", async function (req, res) {
-  res.render("login", {});
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/login", async function (req, res) {
+  const result = await app.locals.pool.query(
+    "SELECT username, passwort FROM users WHERE username = $1 AND passwort = $2",
+    [req.body.username, req.body.passwort]
+  );
+
+  if (result.rows.length > 0) {
+    res.redirect("/account");
+  } else {
+    res.status(401).send("Invalid username or password");
+  }
 });
 
 app.get("/register", async function (req, res) {
   res.render("register", {});
+});
+
+app.post("/register", async function (req, res) {
+  //check if username is equal to an already used username
+  const result = await app.locals.pool.query(
+    "SELECT username FROM users WHERE username = $1",
+    [req.body.username]
+  );
+
+  if (result.rows.length > 1) {
+    res.status(401).send("Invalid username");
+  } else {
+    await app.locals.pool.query(
+      "INSERT INTO users (username, email, passwort) VALUES ($1, $2, $3)",
+      [req.body.username, req.body.email, req.body.passwort]
+    );
+    res.redirect("/");
+  }
 });
 
 app.get("/account", async function (req, res) {
