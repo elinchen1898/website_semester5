@@ -8,6 +8,15 @@ footer {
   padding: 12px;
 }
 
+img.logo {
+  width: 30px;
+}
+
+img.persona {
+  width: 30px;
+  float: right;
+}
+
 body {
   padding-left: 70px;
   padding-right: 70px;
@@ -201,9 +210,19 @@ div.destination {
 }
 
 /* Blogdetail page */
-.head_blog img {
-  height: 500px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+.bg-img {
+  height: 400px;
   border-radius: 17px;
+  background-size: cover;
+}
+
+.bg-img schottland breit {
+  height: 200px;
+  width: 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
 }
 
 .blog_img {

@@ -1,24 +1,21 @@
 <h1>Account</h1>
-<p>Welcome</p>
-{{#users}}
-  <p>{{username}}</p>
-{{/users}}
+<p>Welcome, {{user.username}}</p>
 
 <h3>Your posts</h3>
-{{#myposts}}
-  <div class="post">
-    <h3>{{titel}}</h3>
-    <img src="/uploads/{{bild1}}" class="img" />
-  </div>
-{{/myposts}}
-
-<!-- Deine Posts-->
+{{#if myposts}}
+  {{#each myposts}}
+    <div class="post">
+      <h3>{{titel}}</h3>
+      <img src="/uploads/{{bild1}}" class="img" alt="Post Image" />
+    </div>
+  {{/each}}
+{{else}}
+  <p>You have no posts.</p>
+{{/if}}
 
 <h3>Liked posts</h3>
-<!-- Die gelikten Posts-->
+<!-- Code for displaying liked posts goes here -->
 
 <a href="/login">
-
-
-<button type="submit" class="form-container" >log out</button>
-
+  <button type="submit" class="form-container">Log out</button>
+</a>

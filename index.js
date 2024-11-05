@@ -1,4 +1,5 @@
 import { createApp } from "./config.js";
+import bcrypt from "bcrypt";
 
 const app = createApp({
   user: "restless_violet_3754",
@@ -15,53 +16,28 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.post("/login", async function (req, res) {
-  const result = await app.locals.pool.query(
-    "SELECT username, passwort FROM users WHERE username = $1 AND passwort = $2",
-    [req.body.username, req.body.passwort]
-  );
-
-  if (result.rows.length > 0) {
-    res.redirect("/account");
-  } else {
-    res.status(401).send("Invalid username or password");
-  }
-});
-
-app.get("/register", async function (req, res) {
-  res.render("register", {});
-});
-
-app.post("/register", async function (req, res) {
-  // Check if username already exists
-  const result = await app.locals.pool.query(
-    "SELECT username FROM users WHERE username = $1",
-    [req.body.username]
-  );
-
-  if (result.rows.length > 0) {
-    // Change > 1 to > 0
-    return res.status(401).send("Username already exists");
-  }
-
-  // Insert new user
-  await app.locals.pool.query(
-    "INSERT INTO users (username, email, passwort) VALUES ($1, $2, $3)",
-    [req.body.username, req.body.email, req.body.passwort]
-  );
-
-  res.redirect("/account");
-});
-
-/* todo: account anzeige, name der eingelogten person, posts der eingelogten person*/
 app.get("/account", async function (req, res) {
-  const myposts = await app.locals.pool.query("select * from posts");
-  const users = await app.locals.pool.query("select * from users");
-  res.render("account", { users: users.rows, myposts: myposts.rows });
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+
+  // Fetch user information
+  const userResult = await app.locals.pool.query(
+    "SELECT username FROM users WHERE id = $1",
+    [req.session.userid]
+  );
+  const user = userResult.rows[0];
+
+  // Fetch posts made by the logged-in user
+  const postsResult = await app.locals.pool.query(
+    "SELECT * FROM posts WHERE user_id = $1",
+    [req.session.userid]
+  );
+  const myposts = postsResult.rows;
+
+  // Render the 'account' template with user and post data
+  res.render("account", { user, myposts });
 });
 
 app.get("/blogdetail/:id", async function (req, res) {
@@ -72,6 +48,10 @@ app.get("/blogdetail/:id", async function (req, res) {
 });
 
 app.get("/post", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.render("post", {});
 });
 
@@ -88,6 +68,10 @@ app.post("/create_post", async function (req, res) {
       req.body.bild4,
     ]
   );
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.redirect("/");
 });
 
