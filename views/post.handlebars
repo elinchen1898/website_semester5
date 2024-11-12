@@ -1,7 +1,12 @@
 <div class="form-container">
   <h1>Posten</h1>
 
-  <form action="/create_post" method="post" class="form_post">
+  <form
+    action="/create_post"
+    enctype="multipart/form-data"
+    method="post"
+    class="form_post"
+  >
     <p>Title</p>
     <input type="text" name="titel" />
     <p>Subtitle</p>
@@ -9,10 +14,10 @@
     <p>Text</p>
     <input type="text" name="inhalt" />
     <p>Pictures</p>
-    <input type="file" name="Bild1" />
-    <input type="file" name="Bild2" />
-    <input type="file" name="Bild3" />
-    <input type="file" name="Bild4" />
+    <input type="file" name="bild" />
+    <input type="file" name="bild" />
+    <input type="file" name="bild" />
+    <input type="file" name="bild" />
     <input type="submit" />
   </form>
 </div>

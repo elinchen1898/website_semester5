@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 import bcrypt from "bcrypt";
 
 const app = createApp({
@@ -16,6 +16,7 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
+/* Account */
 app.get("/account", async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
@@ -40,6 +41,7 @@ app.get("/account", async function (req, res) {
   res.render("account", { user, myposts });
 });
 
+/* Blogdetail */
 app.get("/blogdetail/:id", async function (req, res) {
   const myposts = await app.locals.pool.query(
     `select * from posts WHERE id = ${req.params.id}`
@@ -47,6 +49,7 @@ app.get("/blogdetail/:id", async function (req, res) {
   res.render("blogdetail", { myposts: myposts.rows });
 });
 
+/* Post */
 app.get("/post", async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
@@ -55,23 +58,28 @@ app.get("/post", async function (req, res) {
   res.render("post", {});
 });
 
-app.post("/create_post", async function (req, res) {
+app.post("/create_post", upload.array("bild", 4), async function (req, res) {
+  // Check if the user is logged in first
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+
+  // Insert data into the database
   await app.locals.pool.query(
     "INSERT INTO posts (titel, untertitel, inhalt, bild1, bild2, bild3, bild4, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, current_timestamp)",
     [
       req.body.titel,
       req.body.untertitel,
       req.body.inhalt,
-      req.body.bild1,
-      req.body.bild2,
-      req.body.bild3,
-      req.body.bild4,
+      req.files[0].filename,
+      req.files[1].filename,
+      req.files[2].filename,
+      req.files[3].filename,
     ]
   );
-  if (!req.session.userid) {
-    res.redirect("/login");
-    return;
-  }
+
+  // Redirect to the homepage after successful post creation
   res.redirect("/");
 });
 

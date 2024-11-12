@@ -33,9 +33,18 @@ h1.white {
   font-size: 64px;
   font-weight: 20px;
 }
+
+h1 {
+  font-size: 64px;
+  font-weight: 100;
+}
 h1.head_blog {
   color: black;
   font-size: 64px;
+}
+h3 {
+  font-size: 30px;
+  font-weight: 100;
 }
 h3.white {
   color: #fff;
@@ -118,14 +127,22 @@ h2 {
 .form img {
   height: 2em;
 }
-.form-container {
-  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
-  padding: 20px;
-  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
-  width: 100%;
-  max-width: 400px; /* Begrenzte Breite des Formulars */
-}
 
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+
+  height: 100vh; /* Full viewport height */
+}
+.form-container {
+  margin: 2em;
+  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
+  padding: 5%;
+  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
+  width: 80%;
+  width: 50%; /* Begrenzte Breite des Formulars */
+  height: 30%;
+}
 /* Allgemeines Styling für die Formularelemente */
 
 div.destination {
@@ -164,7 +181,7 @@ div.destination {
 
 /* Styling für die Input-Felder */
 .form input {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   background-color: transparent;
   border-color: transparent;
@@ -183,8 +200,9 @@ div.destination {
 
 /* Button Styling */
 .form-container button {
-  width: 100%;
+  width: 20%;
   padding: 10px;
+  margin: 1em;
   color: black;
   border: 1px solid black;
   border-radius: 30px; /* Abgerundete Ecken für den Button */
@@ -197,11 +215,11 @@ div.destination {
   background-color: #ccc;
 }
 .form-container p {
-  color: #333;
+  color: #525252;
 }
 
 .form-container a {
-  color: #333;
+  color: #5b5b5b;
   text-decoration: underline;
 }
 

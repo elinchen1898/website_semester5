@@ -77,6 +77,7 @@ export function createApp(dbconfig) {
         bcrypt.hashSync(req.body.passwort, 10),
       ]
     );
+    res.redirect("/login");
   });
 
   return app;
