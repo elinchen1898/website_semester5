@@ -25,7 +25,7 @@ app.post("/like/:id", async function (req, res) {
     "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.userid]
   );
-  res.redirect(`/blogdetail/${req.params.id}`);
+  res.redirect(`/Blogdetail /${req.params.id}`);
 });
 
 /* Account */

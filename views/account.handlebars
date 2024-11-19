@@ -1,30 +1,39 @@
-<h1>Account</h1>
-<p>Welcome, {{user.username}}</p>
+<body>
 
-<h3>Your posts</h3>
-{{#if myposts}}
-  {{#each myposts}}
-    <a href="/blogdetail/{{id}}">
-      <div
-        class="destination"
-        style="background-image: url(/uploads/{{bild1}});"
-      >
-        <h4 class="white">{{titel}}</h4>
-        <p class="white">{{untertitel}}</p>
-        <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
-          <input type="image" src="/icons/herz.png" class="heart" />
-        </form>
+  <h1>Account</h1>
+  <p>Welcome, {{user.username}}</p>
 
-      </div>
+  <h3>Your posts</h3>
+  {{#if myposts}}
+    {{#each myposts}}
+      <a href="/blogdetail/{{id}}">
+        <div
+          class="destination"
+          style="background-image: url(/uploads/{{bild1}});"
+        >
+          <h4 class="white">{{titel}}</h4>
+          <p class="white">{{untertitel}}</p>
+          <form
+            action="/like/{{id}}"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input type="image" src="/icons/herz.png" class="heart" />
+          </form>
+
+        </div>
+      </a>
+    {{/each}}
+  {{else}}
+    <p>You have no posts.</p>
+  {{/if}}
+
+  <h3>Liked posts</h3>
+  <!-- Code for displaying liked posts goes here -->
+  <div class="middle_button">
+    <a href="/login">
+      <button type="submit">Log out</button>
     </a>
-  {{/each}}
-{{else}}
-  <p>You have no posts.</p>
-{{/if}}
+  </div>
 
-<h3>Liked posts</h3>
-<!-- Code for displaying liked posts goes here -->
-
-<a href="/login">
-  <button type="submit" class="form-container">Log out</button>
-</a>
+</body>

@@ -26,3 +26,24 @@
     ></div>
   </div>
 {{/myposts}}
+
+<div class="post">
+  <div class="form">
+    <a href="/post"><img src="/icons/upload.png" alt="icon post" /></a>
+  </div>
+</div>
+
+<form
+  action="/like/{{id}}"
+  enctype="multipart/form-data"
+  method="POST"
+  class="heart_blog"
+>
+  <input type="image" src="/icons/herz.png" class="heart_blog" />
+</form>
+
+<div class="middle_button">
+  <a href="/">
+    <button type="submit">back to overview</button>
+  </a>
+</div>
