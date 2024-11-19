@@ -15,6 +15,18 @@ app.get("/", async function (req, res) {
   const firstPost = posts.rows[0];
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
+//Like
+app.post("/like/:id", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
+  await app.locals.pool.query(
+    "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
+    [req.params.id, req.session.userid]
+  );
+  res.redirect(`/blogdetail/${req.params.id}`);
+});
 
 /* Account */
 app.get("/account", async function (req, res) {
@@ -67,7 +79,7 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
 
   // Insert data into the database
   await app.locals.pool.query(
-    "INSERT INTO posts (titel, untertitel, inhalt, bild1, bild2, bild3, bild4, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, current_timestamp)",
+    "INSERT INTO posts (titel, untertitel, inhalt, bild1, bild2, bild3, bild4, created_at, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, current_timestamp, $8)",
     [
       req.body.titel,
       req.body.untertitel,
@@ -76,6 +88,7 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
       req.files[1].filename,
       req.files[2].filename,
       req.files[3].filename,
+      req.session.userid,
     ]
   );
 
@@ -83,6 +96,7 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
   res.redirect("/");
 });
 
+//Impressum
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });

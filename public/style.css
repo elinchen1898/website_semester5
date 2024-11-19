@@ -91,11 +91,12 @@ button.white:focus {
 }
 
 div.titelcard {
-  background-image: url("/Images/Schottland.jpg"); /* Pfad zum Bild */
+  background-image: url(""); /* Pfad zum Bild */
   background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
   background-position: center; /* Positioniert das Bild in der Mitte */
   background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
   height: 500px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  width: 100%;
   border-radius: 17px;
 }
 
@@ -161,6 +162,7 @@ div.destination {
   right: 20px;
   bottom: 20px;
   color: red;
+  height: 40px;
 }
 
 .heart img {
@@ -229,36 +231,24 @@ div.destination {
 
 /* Blogdetail page */
 .bg-img {
-  height: 400px;
+  width: 100%;
+  height: 300px;
   border-radius: 17px;
   background-size: cover;
+  background-position: center;
 }
 
-.bg-img schottland breit {
-  height: 200px;
-  width: 40%;
+.bg-img.hoch {
+  grid-column: 2;
+  grid-row: span 2;
+  height: 617px;
+}
+
+.gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 40px;
-}
-
-.blog_img {
-  display: flex;
-  flex-wrap: wrap; /* Damit die Bilder auf zwei Linien umgebrochen werden */
-  gap: 5px;
-}
-
-.blog_img img {
-  width: 49%; /* Zwei Bilder links, die je 49% der Breite haben */
-  margin-bottom: 10px; /* Abstand zwischen den Bildern */
-  border-radius: 17px;
-}
-
-.blog_img img:last-child {
-  width: 49%; /* Das rechte Bild nimmt ebenfalls 49% ein */
-  height: 100%; /* Passt die Höhe an die beiden linken Bilder an */
-  object-fit: cover; /* Verhindert Bildverzerrung */
+  gap: 15px;
 }
 /* Button unten rechts*/
 .post {

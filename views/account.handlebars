@@ -4,10 +4,19 @@
 <h3>Your posts</h3>
 {{#if myposts}}
   {{#each myposts}}
-    <div class="post">
-      <h3>{{titel}}</h3>
-      <img src="/uploads/{{bild1}}" class="img" alt="Post Image" />
-    </div>
+    <a href="/blogdetail/{{id}}">
+      <div
+        class="destination"
+        style="background-image: url(/uploads/{{bild1}});"
+      >
+        <h4 class="white">{{titel}}</h4>
+        <p class="white">{{untertitel}}</p>
+        <form action="/like/{{id}}" enctype="multipart/form-data" method="POST">
+          <input type="image" src="/icons/herz.png" class="heart" />
+        </form>
+
+      </div>
+    </a>
   {{/each}}
 {{else}}
   <p>You have no posts.</p>

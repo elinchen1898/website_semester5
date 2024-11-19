@@ -1,35 +1,43 @@
 <body>
-  
-</body><div class="titelcard">
-  <h1 class="white">{{firstPost.titel}} </h1>
-  <h3 class="white">{{firstPost.inhalt}}</h3>
-  <a href="/blogdetail/{{firstPost.id}}"><button class="white">View Blog</button></a>
-</div>
 
-<h2>Welcome to our Travel-Page </h2>
-<h3 class="black">Enjoy the journey through our post</h3>
-
-<div class="post">
-  <div class="form">
-    <a href="/post"><img
-      src="/icons/upload.png"
-      alt="icon post"
-    /></a>
+  <div
+    class="titelcard"
+    style="background-image: url(/uploads/{{firstPost.bild1}});"
+  >
+    <h1 class="white">{{firstPost.titel}} </h1>
+    <h3 class="white">{{firstPost.untertitel}}</h3>
+    <a href="/blogdetail/{{firstPost.id}}"><button class="white">View Blog</button></a>
   </div>
-</div>
 
-<div class="flex">
-  {{#posts}}
-    <a href="/blogdetail/{{id}}">
-      <div class="destination"
-        style="background-image: url(/uploads/{{bild1}});"
-      >
-        <h4 class="white">{{titel}}</h4>
-        <p class="white">{{untertitel}}</p>
-        <div class="heart"> <img src="/icons/herz.png"></div>
-      </div>
-    </a>
-  {{/posts}}
-</div>
+  <h2>Welcome to our Travel-Page </h2>
+  <h3 class="black">Enjoy the journey through our post</h3>
+
+  <div class="post">
+    <div class="form">
+      <a href="/post"><img src="/icons/upload.png" alt="icon post" /></a>
+    </div>
+  </div>
+
+  <div class="flex">
+    {{#posts}}
+      <a href="/blogdetail/{{id}}">
+        <div
+          class="destination"
+          style="background-image: url(/uploads/{{bild1}});"
+        >
+          <h4 class="white">{{titel}}</h4>
+          <p class="white">{{untertitel}}</p>
+          <form
+            action="/like/{{id}}"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input type="image" src="/icons/herz.png" class="heart" />
+          </form>
+
+        </div>
+      </a>
+    {{/posts}}
+  </div>
 
 </body>
