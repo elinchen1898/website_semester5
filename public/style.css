@@ -167,15 +167,17 @@ div.destination {
 
 .heart {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
-  color: red;
-  height: 40px;
+  right: 30px;
+  bottom: 50px;
+  color: red; /* Default */
+  height: 25px;
 }
+
 .heart_blog {
-  display: flex;
-  justify-content: flex-end; /* Aligns the heart to the right */
-  align-items: center; /* Vertically aligns content (if needed) */
+  height: 30px;
+  position: absolute;
+  right: 50px;
+  margin: 40px;
 }
 
 .heart_blog .heart_blog {

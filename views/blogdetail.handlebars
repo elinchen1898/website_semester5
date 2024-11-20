@@ -34,14 +34,27 @@
 </div>
 
 <form
-  action="/like/{{id}}"
-  enctype="multipart/form-data"
-  method="POST"
-  class="heart_blog"
+action="/like/{{id}}"
+enctype="multipart/form-data"
+method="POST"
 >
-  <input type="image" src="/icons/herz.png" class="heart_blog" />
+<input type="image" src="/icons/herzz.png" class="heart_blog" onclick="like(event)" />
 </form>
-
+<script>
+function like(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  const heart = event.target; // Identify the clicked element
+  
+  // Toggle the 'liked' state
+  if (heart.classList.contains('liked')) {
+    heart.classList.remove('liked');
+    heart.src = "/icons/herzz.png"; // Reset to the original image
+  } else {
+    heart.classList.add('liked');
+    heart.src = "/icons/herzred.png"; // Change to the red heart image
+  }
+}
+</script>    
 <div class="middle_button">
   <a href="/">
     <button type="submit">back to overview</button>

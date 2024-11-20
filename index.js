@@ -16,6 +16,7 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 //Like
+
 app.post("/like/:id", async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
@@ -25,7 +26,6 @@ app.post("/like/:id", async function (req, res) {
     "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.userid]
   );
-  res.redirect(`/Blogdetail /${req.params.id}`);
 });
 
 /* Account */
@@ -105,3 +105,4 @@ app.get("/impressum", async function (req, res) {
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
 });
+

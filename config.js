@@ -37,6 +37,8 @@ export function createApp(dbconfig) {
   });
 
   app.post("/login", async function (req, res) {
+    console.log("das sötts säge v2")
+
     const result = await app.locals.pool.query(
       "SELECT * FROM users WHERE username = $1",
       [req.body.username]
