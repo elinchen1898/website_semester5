@@ -142,6 +142,15 @@ h2 {
   height: 50%;
 }
 
+.form-container_post {
+  margin: 2em;
+  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
+  padding: 5%;
+  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
+  width: 80%;
+  height: fit-content;
+}
+
 .form-container h3 {
   font-size: 30px;
   font-weight: lighter;
@@ -149,6 +158,11 @@ h2 {
 }
 
 .form-container h1 {
+  margin: 0;
+  font-size: 45px;
+}
+
+.form-container_post h1 {
   margin: 0;
   font-size: 45px;
 }
