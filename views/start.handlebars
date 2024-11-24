@@ -36,9 +36,16 @@
           </form>
           <script>
             function like(event) {
+            // Check if the user is logged in first - todo
+
+              if (!req.session.userid) {
+              res.redirect("/login");
+              return;
+              }
+              
               event.preventDefault(); // Prevent the form from submitting
               const heart = event.target; // Identify the clicked element
-              
+             
               // Toggle the 'liked' state
               if (heart.classList.contains('liked')) {
                 heart.classList.remove('liked');

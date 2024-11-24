@@ -18,6 +18,7 @@ app.get("/", async function (req, res) {
 //Like
 
 app.post("/like/:id", async function (req, res) {
+  // Check if the user is logged in first
   if (!req.session.userid) {
     res.redirect("/login");
     return;
@@ -105,4 +106,3 @@ app.get("/impressum", async function (req, res) {
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
 });
-
