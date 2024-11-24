@@ -6,7 +6,9 @@
   <h3>Your posts</h3>
   {{#if myposts}}
     {{#each myposts}}
+    <div class="flex">
       <a href="/blogdetail/{{id}}">
+     
         <div
           class="destination"
           style="background-image: url(/uploads/{{bild1}});"
@@ -37,7 +39,9 @@
         </script>    
 
         </div>
+        
       </a>
+    </div>
     {{/each}}
   {{else}}
     <p>You have no posts.</p>
