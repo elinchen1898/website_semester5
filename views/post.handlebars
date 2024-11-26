@@ -1,29 +1,31 @@
-<div class="form-wrapper">
-  <div class="form-container_post">
-    <h1>Posten</h1>
+<body>
+  <div class="form-wrapper">
+    <div class="form-container_post">
+      <h1>Posten</h1>
 
-    <form
-      action="/create_post"
-      enctype="multipart/form-data"
-      method="post"
-      class="form_post"
-    >
-      <p>Title</p>
-      <input type="text" name="titel" />
-      <p>Subtitle</p>
-      <input type="text" name="untertitel" />
-      <p>Text</p>
-      <input name="inhalt" class="inhalt" />
-      <p>Pictures</p>
-      <p>Picture 1</p>
-      <input type="file" name="bild" />
-      <p>Picture 2</p>
-      <input type="file" name="bild" />
-      <p>Picture 3</p>
-      <input type="file" name="bild" />
-      <p>Picture 4</p>
-      <input type="file" name="bild" />
-      <input type="submit" />
-    </form>
+      <form
+        action="/create_post"
+        enctype="multipart/form-data"
+        method="post"
+        class="form_post"
+      >
+        <p>Title</p>
+        <input type="text" name="titel" />
+        <p>Subtitle</p>
+        <input type="text" name="untertitel" />
+        <p>Text</p>
+        <input type="text" name="inhalt" />
+        <p>Pictures</p>
+        <p>Picture 1</p>
+        <input type="file" name="bild" />
+        <p>Picture 2</p>
+        <input type="file" name="bild" />
+        <p>Picture 3</p>
+        <input type="file" name="bild" />
+        <p>Picture 4</p>
+        <input type="file" name="bild" />
+        <input type="submit" class="button" />
+      </form>
+    </div>
   </div>
-</div>
+</body>
