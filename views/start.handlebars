@@ -37,7 +37,6 @@
           <script>
             function like(event) {
             // Check if the user is logged in first - todo
-
              if (!req.session.userid) {
               res.redirect("/login");
               return;
@@ -49,13 +48,17 @@
               // Toggle the 'liked' state
               if (heart.classList.contains('liked')) {
                 heart.classList.remove('liked');
-                heart.src = "/icons/herz.png"; // Reset to the original image
+                heart.src = "/icons/herz.png";
+                return; 
+              // Reset to the original image
               } else {
                 heart.classList.add('liked');
-                heart.src = "/icons/herzred.png"; // Change to the red heart image
-              }
+                heart.src = "/icons/herzred.png"; 
+                return; 
+                // Change to the red heart image
+              } 
             }
-          </script>    
+          </script>   
         </div>
       </a>
     {{/posts}}

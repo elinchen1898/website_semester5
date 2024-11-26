@@ -3,49 +3,52 @@
   <h1>Account</h1>
   <p>Welcome, {{user.username}}</p>
 
-  <h3>Your posts</h3>
-  {{#if myposts}}
-    {{#each myposts}}
-    <div class="flex">
-      <a href="/blogdetail/{{id}}">
-     
-        <div
-          class="destination"
-          style="background-image: url(/uploads/{{bild1}});"
-        >
-          <h4 class="white">{{titel}}</h4>
-          <p class="white">{{untertitel}}</p>
-          <form
-          action="/like/{{id}}"
-          enctype="multipart/form-data"
-          method="POST"
-        >
-        <input type="image" src="/icons/herz.png" class="heart" onclick="like(event)" />
-        </form>
-        <script>
-          function like(event) {
-            event.preventDefault(); // Prevent the form from submitting
-            const heart = event.target; // Identify the clicked element
-            
-            // Toggle the 'liked' state
-            if (heart.classList.contains('liked')) {
-              heart.classList.remove('liked');
-              heart.src = "/icons/herz.png"; // Reset to the original image
-            } else {
-              heart.classList.add('liked');
-              heart.src = "/icons/herzred.png"; // Change to the red heart image
-            }
-          }
-        </script>    
+  <div class="Account">
+    <h3>Your posts</h3>
+    {{#if myposts}}
+      {{#each myposts}}
+        <div class="flex">
+          <a href="/blogdetail/{{id}}">
 
+            <div
+              class="destination"
+              style="background-image: url(/uploads/{{bild1}});"
+            >
+              <h4 class="white">{{titel}}</h4>
+              <p class="white">{{untertitel}}</p>
+              <form
+                action="/like/{{id}}"
+                enctype="multipart/form-data"
+                method="POST"
+              >
+                <input
+                  type="image"
+                  src="/icons/herz.png"
+                  class="heart"
+                  onclick="like(event)"
+                />
+              </form>
+              <script>
+                function like(event) { event.preventDefault(); // Prevent the
+                form from submitting const heart = event.target; // Identify the
+                clicked element // Toggle the 'liked' state if
+                (heart.classList.contains('liked')) {
+                heart.classList.remove('liked'); heart.src = "/icons/herz.png";
+                // Reset to the original image } else {
+                heart.classList.add('liked'); heart.src = "/icons/herzred.png";
+                // Change to the red heart image } }
+              </script>
+
+            </div>
+
+          </a>
         </div>
-        
-      </a>
-    </div>
-    {{/each}}
-  {{else}}
-    <p>You have no posts.</p>
-  {{/if}}
+      {{/each}}
+    {{else}}
+      <p>You have no posts.</p>
+    {{/if}}
+
+  </div>
 
   <h3>Liked posts</h3>
   <!-- Code for displaying liked posts goes here -->

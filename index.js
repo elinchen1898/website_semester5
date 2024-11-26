@@ -15,11 +15,11 @@ app.get("/", async function (req, res) {
   const firstPost = posts.rows[0];
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
-//Like
 
+//Like
 app.post("/like/:id", async function (req, res) {
   // Check if the user is logged in first
-  if (!req.session.userid) {
+ if (!req.session.userid) {
     res.redirect("/login");
     return;
   }
@@ -36,22 +36,29 @@ app.get("/account", async function (req, res) {
     return;
   }
 
-  // Fetch user information
-  const userResult = await app.locals.pool.query(
-    "SELECT username FROM users WHERE id = $1",
-    [req.session.userid]
-  );
-  const user = userResult.rows[0];
+ // Fetch user information
+ const userResult = await app.locals.pool.query(
+  "SELECT username FROM users WHERE id = $1",
+  [req.session.userid]
+);
+const user = userResult.rows[0];
 
-  // Fetch posts made by the logged-in user
-  const postsResult = await app.locals.pool.query(
-    "SELECT * FROM posts WHERE user_id = $1",
-    [req.session.userid]
-  );
-  const myposts = postsResult.rows;
+// Fetch posts made by the logged-in user
+const postsResult = await app.locals.pool.query(
+  "SELECT * FROM posts WHERE user_id = $1",
+  [req.session.userid]
+);
+const myposts = postsResult.rows;
 
-  // Render the 'account' template with user and post data
-  res.render("account", { user, myposts });
+// Fetch posts liked by the logged-in user
+const likesResult = await app.locals.pool.query(
+  "SELECT posts.* FROM posts INNER JOIN likes ON posts.id = likes.post_id WHERE likes.user_id = $1",
+  [req.session.userid]
+);
+const like = likesResult.rows;
+
+// Render the 'account' template with all the fetched data
+res.render("account", { user, myposts, like });
 });
 
 /* Blogdetail */

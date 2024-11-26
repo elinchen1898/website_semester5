@@ -88,6 +88,12 @@ button.white:focus {
   gap: 40px;
 }
 
+.Account {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 div.titelcard {
   background-image: url(""); /* Pfad zum Bild */
   background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
@@ -150,7 +156,6 @@ h2 {
   width: 80%;
   height: fit-content;
 }
-
 
 .form-container h3 {
   font-size: 30px;
@@ -307,6 +312,9 @@ div.destination {
   grid-template-rows: 1fr 1fr;
   gap: 15px;
 }
+
+/* Account page */
+
 /* Button unten rechts*/
 .post {
   position: relative; /* Ermöglicht die Positionierung innerhalb des Containers */
