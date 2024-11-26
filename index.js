@@ -16,17 +16,22 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
-//Like
 app.post("/like/:id", async function (req, res) {
   // Check if the user is logged in first
- if (!req.session.userid) {
+  if (!req.session.userid) {
     res.redirect("/login");
     return;
   }
+
+  /*const { liked } = req.body;
+
+  if (liked) {*/
   await app.locals.pool.query(
     "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.userid]
   );
+
+  res.send("ok");
 });
 
 /* Account */
@@ -36,35 +41,36 @@ app.get("/account", async function (req, res) {
     return;
   }
 
- // Fetch user information
- const userResult = await app.locals.pool.query(
-  "SELECT username FROM users WHERE id = $1",
-  [req.session.userid]
-);
-const user = userResult.rows[0];
+  // Fetch user information
+  const userResult = await app.locals.pool.query(
+    "SELECT username FROM users WHERE id = $1",
+    [req.session.userid]
+  );
+  const user = userResult.rows[0];
 
-// Fetch posts made by the logged-in user
-const postsResult = await app.locals.pool.query(
-  "SELECT * FROM posts WHERE user_id = $1",
-  [req.session.userid]
-);
-const myposts = postsResult.rows;
+  // Fetch posts made by the logged-in user
+  const postsResult = await app.locals.pool.query(
+    "SELECT * FROM posts WHERE user_id = $1",
+    [req.session.userid]
+  );
+  const myposts = postsResult.rows;
 
-// Fetch posts liked by the logged-in user
-const likesResult = await app.locals.pool.query(
-  "SELECT posts.* FROM posts INNER JOIN likes ON posts.id = likes.post_id WHERE likes.user_id = $1",
-  [req.session.userid]
-);
-const like = likesResult.rows;
+  // Fetch posts liked by the logged-in user
+  const likesResult = await app.locals.pool.query(
+    "SELECT posts.* FROM posts INNER JOIN likes ON posts.id = likes.post_id WHERE likes.user_id = $1",
+    [req.session.userid]
+  );
+  const like = likesResult.rows;
 
-// Render the 'account' template with all the fetched data
-res.render("account", { user, myposts, like });
+  // Render the 'account' template with all the fetched data
+  res.render("account", { user, myposts, like });
 });
 
 /* Blogdetail */
 app.get("/blogdetail/:id", async function (req, res) {
   const myposts = await app.locals.pool.query(
-    `select * from posts WHERE id = ${req.params.id}`
+    "select * from posts WHERE id = $1",
+    [req.params.id]
   );
   res.render("blogdetail", { myposts: myposts.rows });
 });
