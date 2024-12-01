@@ -14,7 +14,7 @@ app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query(
     "select * from posts ORDER BY id DESC"
   );
-  
+
   const firstPost = posts.rows[0];
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
@@ -113,6 +113,9 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
   res.redirect("/");
 });
 
+app.get("/404", async function (req, res) {
+  res.render("404", {});
+});
 //Impressum
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});

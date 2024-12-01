@@ -49,10 +49,8 @@ export function createApp(dbconfig) {
       req.session.userid = result.rows[0].id;
       res.redirect("/account");
     } else {
-      res.status(401).send("Invalid username or password");
+      res.redirect("/404");
     }
-
-  
   });
 
   app.get("/register", async function (req, res) {

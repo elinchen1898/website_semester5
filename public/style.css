@@ -20,8 +20,13 @@ img.persona {
 body {
   padding-left: 70px;
   padding-right: 70px;
+  height: 100%;
 }
 
+footer {
+  position: relative;
+  bottom: 0;
+}
 .titelcard {
   padding-right: 500px;
 }
