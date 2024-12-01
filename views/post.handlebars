@@ -14,7 +14,7 @@
         <p>Subtitle</p>
         <input type="text" name="untertitel" />
         <p>Text</p>
-        <input type="text" name="inhalt" />
+        <textarea name="inhalt" rows="1" oninput="adjustTextareaHeight(this)"></textarea>
         <p>Pictures</p>
         <p>Picture 1</p>
         <input type="file" name="bild" />
@@ -24,8 +24,18 @@
         <input type="file" name="bild" />
         <p>Picture 4</p>
         <input type="file" name="bild" />
-        <input type="submit" class="button" />
+        <button type="submit" class="form_post">
+          <img src="/icons/upload.png" alt="Submit" />
+        </button>
       </form>
     </div>
   </div>
+
+  <script>
+    // Adjust the height of the textarea dynamically
+    function adjustTextareaHeight(textarea) {
+      textarea.style.height = "auto"; // Reset height to calculate the new size
+      textarea.style.height = textarea.scrollHeight + "px"; // Set height based on content
+    }
+  </script>
 </body>

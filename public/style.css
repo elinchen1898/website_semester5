@@ -85,6 +85,26 @@ button.white:focus {
   background-color: #6f6f6f2b;
 }
 
+/*post*/
+textarea {
+  overflow: hidden;
+  resize: none; /* Deaktiviert manuelles Resize */
+  width: 50%; /* Passt die Breite an */
+  box-sizing: border-box; /* Bezieht Padding und Border in die Breite ein */
+}
+.form-container_post input {
+  width: 50%;
+}
+
+.form-container_post .button_pst {
+  padding: 10px;
+  margin-top: 10px;
+  width: 20%;
+  border: 2px solid;
+  border-radius: 30px;
+  background: transparent;
+}
+
 .flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -228,6 +248,15 @@ div.destination {
   align-items: center;
   margin-bottom: 15px;
 }
+.form_post {
+  background: transparent;
+  border: none;
+}
+.form_post img {
+  width: 10%;
+  display: flex;
+  margin-bottom: 15px;
+}
 
 .form label {
   width: 120px; /* Festgelegte Breite für das Label */
@@ -252,6 +281,7 @@ div.destination {
 .form input:focus {
   border-bottom: 1px solid #838383; /* Blauer Rand bei Fokus */
 }
+
 .button {
   background-color: transparent;
   color: black;
@@ -261,6 +291,7 @@ div.destination {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .middle_button {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -282,7 +313,7 @@ div.destination {
 }
 /* Button Styling */
 .form-container button {
-  width: 35%;
+  width: 20%;
   padding: 10px;
   margin: 1em;
   margin-left: 0px;

@@ -14,6 +14,7 @@ app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query(
     "select * from posts ORDER BY id DESC"
   );
+  
   const firstPost = posts.rows[0];
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });

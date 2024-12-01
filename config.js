@@ -51,6 +51,8 @@ export function createApp(dbconfig) {
     } else {
       res.status(401).send("Invalid username or password");
     }
+
+  
   });
 
   app.get("/register", async function (req, res) {
