@@ -65,7 +65,7 @@ export function createApp(dbconfig) {
     );
 
     if (result.rows.length > 0) {
-      return res.status(401).send("Username already exists");
+      return res.redirect("/404_reg");
     }
 
     // Insert new user

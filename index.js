@@ -26,9 +26,6 @@ app.post("/like/:id", async function (req, res) {
     return;
   }
 
-  /*const { liked } = req.body;
-
-  if (liked) {*/
   await app.locals.pool.query(
     "INSERT INTO likes (post_id, user_id) VALUES ($1, $2)",
     [req.params.id, req.session.userid]
@@ -113,9 +110,16 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
   res.redirect("/");
 });
 
+//404
+
 app.get("/404", async function (req, res) {
   res.render("404", {});
 });
+
+app.get("/404_reg", async function (req, res) {
+  res.render("404_reg", {});
+});
+
 //Impressum
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
