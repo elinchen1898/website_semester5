@@ -93,9 +93,9 @@
     }
 
     function like(event) {
-  event.preventDefault(); // Prevent the form from submitting
-  const heart = event.target; // Identify the clicked element
-  const postId = heart.getAttribute("data-id") // Get the post ID from the form action
+     event.preventDefault(); // Prevent the form from submitting
+      const heart = event.target; // Identify the clicked element
+      const postId = heart.getAttribute("data-id") // Get the post ID from the form action
 
     // Send AJAX request to the server
     fetch(`/like/${postId}`, {

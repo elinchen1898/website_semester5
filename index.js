@@ -19,7 +19,7 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
-/*likes*/ 
+/*Likes*/
 app.post("/like/:id", async function (req, res) {
   // Check if the user is logged in first
   if (!req.session.userid) {
@@ -112,7 +112,6 @@ app.post("/create_post", upload.array("bild", 4), async function (req, res) {
 });
 
 //404
-
 app.get("/404", async function (req, res) {
   res.render("404", {});
 });

@@ -8,15 +8,6 @@ footer {
   padding: 12px;
 }
 
-img.logo {
-  width: 30px;
-}
-
-img.persona {
-  width: 30px;
-  float: right;
-}
-
 body {
   padding-left: 70px;
   padding-right: 70px;
@@ -24,11 +15,8 @@ body {
 }
 
 footer {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 20px;
-}
-.titelcard {
-  padding-right: 500px;
 }
 
 h1.white {
@@ -88,6 +76,19 @@ button.white {
 button.white:hover,
 button.white:focus {
   background-color: #6f6f6f2b;
+}
+
+img.logo {
+  width: 30px;
+}
+
+img.persona {
+  width: 30px;
+  float: right;
+}
+
+.titelcard {
+  padding-right: 500px;
 }
 
 /*post*/
@@ -165,8 +166,6 @@ h2 {
   text-align: center;
 }
 
-/* Header */
-
 /* Forms */
 /* Container für das Formular - graue box*/
 .form img {
@@ -214,7 +213,6 @@ h2 {
   font-size: 45px;
 }
 /* Allgemeines Styling für die Formularelemente */
-
 div.destination {
   padding-left: 25px;
   background-image: url("/Images/Japan.jpg");

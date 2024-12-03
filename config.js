@@ -32,6 +32,7 @@ export function createApp(dbconfig) {
 
   app.locals.pool = pool;
 
+  /*Login*/
   app.get("/login", (req, res) => {
     res.render("login");
   });
@@ -53,6 +54,7 @@ export function createApp(dbconfig) {
     }
   });
 
+  /*Register*/
   app.get("/register", async function (req, res) {
     res.render("register", {});
   });
