@@ -19,6 +19,7 @@ app.get("/", async function (req, res) {
   res.render("start", { firstPost: firstPost, posts: posts.rows });
 });
 
+/*likes*/ 
 app.post("/like/:id", async function (req, res) {
   // Check if the user is logged in first
   if (!req.session.userid) {
