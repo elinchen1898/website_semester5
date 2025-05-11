@@ -112,6 +112,7 @@ h1.head_blog {
 p {
   font-size: 16px;
   font-weight: 100;
+  margin: 0 0 10 0;
 }
 
 .link,
@@ -157,6 +158,7 @@ h3.black {
 h4 {
   font-size: 24px;
   font-weight: bold;
+  margin: 30 0 0 0;
 }
 
 .main_button {
@@ -608,4 +610,26 @@ textarea {
   margin-top: 100px;
   width: 33%;
   z-index: -1;
+}
+
+.background-letter_K {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 100px;
+  width: 40%;
+  z-index: -1;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* wichtig, damit das <a> den ganzen Block einnimmt */
+}
+
+.main-content {
+  padding: 20px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
