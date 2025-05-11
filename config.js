@@ -41,6 +41,10 @@ export function createApp(dbconfig) {
     res.render("verein");
   });
 
+  app.get("/Rangliste", (req, res) => {
+    res.render("Rangliste");
+  });
+
   app.get("/K1", (req, res) => {
     res.render("K1");
   });
