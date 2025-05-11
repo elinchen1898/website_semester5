@@ -50,11 +50,15 @@ nav a.active {
 body {
   padding: 0;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .body {
   padding: 0 70px;
   margin-right: 100px;
+  flex: 1;
 }
 
 footer {
@@ -201,9 +205,9 @@ img.persona {
 /*post*/
 textarea {
   overflow: hidden;
-  resize: none; /* Deaktiviert manuelles Resize */
-  width: 50%; /* Passt die Breite an */
-  box-sizing: border-box; /* Bezieht Padding und Border in die Breite ein */
+  resize: none;
+  width: 50%;
+  box-sizing: border-box;
 }
 .form-container_post input {
   width: 50%;
@@ -224,8 +228,8 @@ textarea {
 }
 
 .flex {
-  display: flex; /* Ändere Grid zu Flexbox für einfachere Handhabung */
-  flex-wrap: wrap; /* Ermöglicht Umbrüche bei kleinen Bildschirmen */
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -236,17 +240,17 @@ textarea {
 }
 
 div.titelcard {
-  background-image: url(""); /* Pfad zum Bild */
+  background-image: url("");
   background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
       rgba(0, 0, 0, 0.7)
     ),
     url("/uploads/{{firstPost.bild1}}");
-  background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
-  background-position: center; /* Positioniert das Bild in der Mitte */
-  background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
-  height: 500px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
   border-radius: 17px;
 }
 
@@ -256,7 +260,7 @@ h4.white {
   color: #fff;
   padding-bottom: 20px;
   font-size: 25px;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7); /* Schwarzer Schatten */
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
 
 p.white {
@@ -267,8 +271,6 @@ p.white {
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Forms */
-/* Container für das Formular - graue box*/
 .form img {
   height: 2em;
 }
@@ -276,23 +278,23 @@ p.white {
 .form-wrapper {
   display: flex;
   justify-content: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 .form-container {
   margin: 2em;
-  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
+  background-color: #e0e0e0;
   padding: 5%;
-  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
+  border-radius: 10px;
   width: 80%;
-  width: 50%; /* Begrenzte Breite des Formulars */
+  width: 50%;
   height: 50%;
 }
 
 .form-container_post {
   margin: 2em;
-  background-color: #e0e0e0; /* Grauer Hintergrund für das Formular */
+  background-color: #e0e0e0;
   padding: 5%;
-  border-radius: 10px; /* Abgerundete Ecken für den Formular-Container */
+  border-radius: 10px;
   width: 80%;
   height: fit-content;
 }
@@ -317,7 +319,7 @@ p.white {
 .button {
   background-color: #3d4c53;
   color: #fff;
-  border-radius: 5px; /* Abgerundete Ecken für den Button */
+  border-radius: 5px;
   font-size: 16px;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -348,7 +350,7 @@ p.white {
   background-color: none;
   color: #000000;
   border: 1px solid black;
-  border-radius: 5px; /* Abgerundete Ecken für den Button */
+  border-radius: 5px;
   font-size: 16px;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -368,7 +370,7 @@ p.white {
 .middle_button button {
   background-color: #3d4c53;
   color: #fff;
-  border-radius: 5px; /* Abgerundete Ecken für den Button */
+  border-radius: 5px;
   font-size: 16px;
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -380,7 +382,7 @@ p.white {
   margin: 45px;
   margin-left: -10px;
 }
-/* Button Styling */
+
 .form-container button {
   width: 20%;
   padding: 10px;
@@ -389,12 +391,12 @@ p.white {
   background-color: transparent;
   color: black;
   border: 1px solid black;
-  border-radius: 30px; /* Abgerundete Ecken für den Button */
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-/* Hover-Effekt für den Button */
+/* Hover Effekt für  Button */
 .form-container button:hover {
   background-color: #ccc;
 }
@@ -411,7 +413,6 @@ p.white {
   color: #007bff;
 }
 
-/* Blogdetail page */
 .bg-img {
   width: 100%;
   height: 30em;
@@ -433,22 +434,18 @@ p.white {
   gap: 15px;
 }
 
-/* Account page */
-
-/* Button unten rechts*/
 .post {
-  position: relative; /* Ermöglicht die Positionierung innerhalb des Containers */
+  position: relative;
 }
 
-/* Styling für die Container-Div */
 .post .form {
-  position: fixed; /* Fixiert die Position des Buttons */
-  bottom: 20px; /* Abstand vom unteren Bildschirmrand */
-  right: 20px; /* Abstand vom rechten Bildschirmrand */
-  z-index: 1000; /* Stellt sicher, dass der Button über anderen Inhalten liegt */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
-/* Styling für das Bild im Button */
+/* Styling Bild im Button */
 .post .form img {
   width: 40px; /* Breite des Icons */
   height: 40px; /* Höhe des Icons */
@@ -457,11 +454,11 @@ p.white {
   background-color: #5b5b5bd5;
   filter: invert(1);
   border-radius: 15px;
-  transition: transform 0.3s ease; /* Sanfte Animation beim Hover */
+  transition: transform 0.3s ease;
 }
 
 .post .form img:hover {
-  transform: scale(1.1); /* Vergrößert das Icon bei Hover */
+  transform: scale(1.1);
 }
 
 /*404*/
@@ -484,6 +481,14 @@ p.white {
   padding: 40px 20%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-anfrage {
+  margin-top: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .form-group {
@@ -532,7 +537,6 @@ textarea {
   width: 100%;
 }
 
-/*cards*/
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -624,7 +628,7 @@ textarea {
 .card-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* wichtig, damit das <a> den ganzen Block einnimmt */
+  display: block;
 }
 
 .main-content {
@@ -632,4 +636,114 @@ textarea {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+}
+
+.card-grid {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  flex: 1;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card-title {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  flex: 1;
+}
+
+.card-link:hover .card {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.forms {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  flex: 1;
+}
+
+.contact-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.map-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.left_card {
+  flex: 2;
+}
+
+.left_card iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  border: none;
+}
+
+.right_card {
+  flex: 1;
+  padding: 10px;
+}
+
+.right_card h3 {
+  margin-bottom: 10px;
+  color: #444;
 }
