@@ -7,10 +7,9 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-    <style>
+    />    <style>
       .nav-link:hover { font-weight: 700; }
-
+      .nav-link.active { font-weight: 700; }
     </style>
   </head>
 
@@ -18,12 +17,11 @@
     <header>
       <a href="/">
         <img class="logo" src="/icons/Getu_Logo_blau 1.png" alt="Logo" />
-      </a>
-      <nav>
+      </a>      <nav>
         <ul>
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/verein" class="nav-link">Verein</a></li>
-          <li><a href="/training" class="nav-link">Training</a></li>
+          <li><a href="/" class="nav-link {{#if (eq currentPath "home")}}active{{/if}}">Home</a></li>
+          <li><a href="/verein" class="nav-link {{#if (eq currentPath "verein")}}active{{/if}}">Verein</a></li>
+          <li><a href="/training" class="nav-link {{#if (eq currentPath "training")}}active{{/if}}">Training</a></li>
         </ul>
       </nav>
       <a href="/login">

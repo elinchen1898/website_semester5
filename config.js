@@ -12,8 +12,16 @@ export function createApp(dbconfig) {
   const app = express();
 
   const pool = new Pool(dbconfig);
-
-  app.engine("handlebars", engine());
+  app.engine(
+    "handlebars",
+    engine({
+      helpers: {
+        eq: function (a, b) {
+          return a === b;
+        },
+      },
+    })
+  );
   app.set("view engine", "handlebars");
   app.set("views", "./views");
 
@@ -36,9 +44,8 @@ export function createApp(dbconfig) {
   app.get("/login", (req, res) => {
     res.render("login");
   });
-
   app.get("/verein", (req, res) => {
-    res.render("verein");
+    res.render("verein", { currentPath: "verein" });
   });
 
   app.get("/Rangliste", (req, res) => {
@@ -56,9 +63,8 @@ export function createApp(dbconfig) {
   app.get("/Kbasis", (req, res) => {
     res.render("Kbasis");
   });
-
   app.get("/training", (req, res) => {
-    res.render("training");
+    res.render("training", { currentPath: "training" });
   });
 
   app.get("/Erklaerungsseite", (req, res) => {
