@@ -9,7 +9,7 @@ const app = createApp({
   port: 30211,
 });
 
-/* Startseite */
+/* start */
 app.get("/", async function (req, res) {
   const posts = await app.locals.pool.query(
     "select * from posts ORDER BY id DESC"
@@ -35,8 +35,8 @@ app.post("/like/:id", async function (req, res) {
   res.send("ok");
 });
 
-/* Account */
-app.get("/account", async function (req, res) {
+/* anfrage */
+app.get("/anfrage", async function (req, res) {
   if (!req.session.userid) {
     res.redirect("/login");
     return;
@@ -64,7 +64,7 @@ app.get("/account", async function (req, res) {
   const like = likesResult.rows;
 
   // Render the 'account' template with all the fetched data
-  res.render("account", { user, myposts, like });
+  res.render("anfrage", { user, myposts, like });
 });
 
 /* Blogdetail */

@@ -37,6 +37,34 @@ export function createApp(dbconfig) {
     res.render("login");
   });
 
+  app.get("/verein", (req, res) => {
+    res.render("verein");
+  });
+
+  app.get("/K1", (req, res) => {
+    res.render("K1");
+  });
+
+  app.get("/K4", (req, res) => {
+    res.render("K4");
+  });
+
+  app.get("/Kbasis", (req, res) => {
+    res.render("Kbasis");
+  });
+
+  app.get("/training", (req, res) => {
+    res.render("training");
+  });
+
+  app.get("/Erklaerungsseite", (req, res) => {
+    res.render("Erklaerungsseite");
+  });
+
+  app.get("/kontakt", (req, res) => {
+    res.render("kontakt");
+  });
+
   app.post("/login", async function (req, res) {
     const result = await app.locals.pool.query(
       "SELECT * FROM users WHERE username = $1",
@@ -48,18 +76,18 @@ export function createApp(dbconfig) {
       bcrypt.compareSync(req.body.passwort, result.rows[0].passwort)
     ) {
       req.session.userid = result.rows[0].id;
-      res.redirect("/account");
+      res.redirect("/anfrage");
     } else {
       res.redirect("/404");
     }
   });
 
-  /*Register*/
-  app.get("/register", async function (req, res) {
-    res.render("register", {});
+  /*anfrage*/
+  app.get("/anfrage", async function (req, res) {
+    res.render("anfrage", {});
   });
 
-  app.post("/register", async function (req, res) {
+  app.post("/anfrage", async function (req, res) {
     // Check if username already exists
     const result = await app.locals.pool.query(
       "SELECT username FROM users WHERE username = $1",

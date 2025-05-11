@@ -1,22 +1,93 @@
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 header,
 footer {
-  background-color: white;
   padding: 12px;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav {
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+.user-icon {
+  height: 24px;
+}
+
 body {
-  padding-left: 70px;
-  padding-right: 70px;
-  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  padding: 0 70px;
 }
 
 footer {
-  margin-top: 100px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  margin-top: 50px;
+  background-color: #667277;
+  font-weight: regular;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.address img {
+  height: 30px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 30px;
 }
 
 h1.white {
@@ -37,12 +108,37 @@ h1.head_blog {
   font-size: 64px;
 }
 
+p {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.link,
+.link a {
+  color: #9b9b9b;
+  text-decoration: underline;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #3d4c53;
+  font-size: 50px;
+}
 h3.white {
   color: #fff;
   font-weight: lighter;
   padding-left: 30px;
   margin-top: -20px;
   font-size: 30px;
+}
+h3.forms {
+  font-weight: 600;
+  color: 3D4C53;
+  font-size: 40px;
 }
 h3.top {
   margin-top: 10%;
@@ -51,10 +147,9 @@ h3.top {
 h3.black {
   color: #000000;
   font-weight: lighter;
-  font-size: 30px;
+  font-size: 20px;
   margin-top: -50px;
   padding-bottom: 40px;
-  text-align: center;
 }
 
 h4 {
@@ -62,20 +157,8 @@ h4 {
   font-weight: bold;
 }
 
-button.white {
-  background-color: transparent;
-  color: #fff;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 7;
-  padding-bottom: 7;
-  margin-left: 2em;
-  border-radius: 70px;
-  border: 2px solid white;
-}
-button.white:hover,
-button.white:focus {
-  background-color: #6f6f6f2b;
+.main_button {
+  font-family: poppins;
 }
 
 img.logo {
@@ -90,7 +173,26 @@ img.persona {
 .titelcard {
   padding-right: 500px;
 }
+/*Start*/
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  padding: 40px;
+  align-items: center;
+}
+
+.left {
+  max-width: 600px;
+}
+
+.right img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
 /*post*/
 textarea {
   overflow: hidden;
@@ -112,14 +214,14 @@ textarea {
 }
 
 .form-container_post .button_post:hover {
-  background-color: #9e9e9ea7;
-  color: white;
+  background-color: #f5f5f5;
+  color: black;
 }
 
 .flex {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  display: flex; /* Ändere Grid zu Flexbox für einfachere Handhabung */
+  flex-wrap: wrap; /* Ermöglicht Umbrüche bei kleinen Bildschirmen */
+  gap: 20px;
 }
 
 .Account {
@@ -160,12 +262,6 @@ p.white {
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
 
-h2 {
-  color: #000000;
-  font-size: 50px;
-  text-align: center;
-}
-
 /* Forms */
 /* Container für das Formular - graue box*/
 .form img {
@@ -175,7 +271,6 @@ h2 {
 .form-wrapper {
   display: flex;
   justify-content: center;
-
   height: 100vh; /* Full viewport height */
 }
 .form-container {
@@ -201,6 +296,7 @@ h2 {
   font-size: 30px;
   font-weight: lighter;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .form-container h1 {
@@ -212,112 +308,72 @@ h2 {
   margin: 0;
   font-size: 45px;
 }
-/* Allgemeines Styling für die Formularelemente */
-div.destination {
-  padding-left: 25px;
-  background-image: url("/Images/Japan.jpg");
-  background-size: cover; /* Passt das Bild an, sodass es den gesamten Bildschirm abdeckt */
-  background-position: center; /* Positioniert das Bild in der Mitte */
-  background-repeat: no-repeat; /* Verhindert, dass sich das Bild wiederholt */
-  height: 450px; /* Stellt sicher, dass das Hintergrundbild die gesamte Höhe des Viewports einnimmt */
-  border-radius: 25px;
-  position: relative;
-}
-
-.heart {
-  position: absolute;
-  right: 30px;
-  bottom: 50px;
-  color: red; /* Default */
-  height: 25px;
-}
-
-.heart_blog {
-  position: absolute;
-  height: 25px;
-  right: 5px;
-  bottom: 10px;
-  margin: 40px;
-}
-
-.heart_blog .heart_blog {
-  width: 40px;
-  margin: 20px;
-  margin-top: 70px;
-}
-
-.heart img {
-  height: 20px;
-  filter: invert(1);
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.form_post {
-  background: transparent;
-  border: none;
-}
-.form_post img {
-  width: 10%;
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.form label {
-  width: 120px; /* Festgelegte Breite für das Label */
-  margin-right: -50px;
-}
-
-/* Styling für die Input-Felder */
-.form input {
-  width: 50%;
-  padding: 10px;
-  background-color: transparent;
-  border-color: transparent;
-  border-bottom: 1px solid black;
-  font-size: 16px;
-  outline: none;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-/* Hover- und Fokus-Effekte für Input-Felder */
-.form input:hover,
-.form input:focus {
-  border-bottom: 1px solid #838383; /* Blauer Rand bei Fokus */
-}
 
 .button {
-  background-color: transparent;
-  color: black;
-  border: 2px solid black;
-  border-radius: 30px; /* Abgerundete Ecken für den Button */
+  background-color: #3d4c53;
+  color: #fff;
+  border-radius: 5px; /* Abgerundete Ecken für den Button */
   font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: 0;
+
+  padding: 7px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin: 45px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.button-cards {
+  background-color: #2a363f;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 25%;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.button-cards:hover {
+  background-color: #1e2a30;
+}
+.button_white {
+  background-color: none;
+  color: #000000;
+  border: 1px solid black;
+  border-radius: 5px; /* Abgerundete Ecken für den Button */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  padding: 7px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin: 45px;
+  margin-left: 10px;
+  margin-top: 30px;
 }
 
 .middle_button {
   display: flex;
-  justify-content: center; /* Center horizontally */
 }
 
 .middle_button button {
-  background-color: transparent;
-  color: black;
-  border: 2px solid black;
-  border-radius: 30px; /* Abgerundete Ecken für den Button */
+  background-color: #3d4c53;
+  color: #fff;
+  border-radius: 5px; /* Abgerundete Ecken für den Button */
   font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 40%;
-  margin-bottom: 90%;
+  cursor: pointer;
+  border: 0;
+
+  padding: 7px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin: 45px;
+  margin-left: -10px;
 }
 /* Button Styling */
 .form-container button {
@@ -415,4 +471,121 @@ div.destination {
 
 .viernullvier {
   color: black;
+}
+
+/*Probetraining*/
+.container {
+  background: #f5f5f5;
+  padding: 40px 20%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+  width: 48%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.formname {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 14px;
+}
+.name {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/*cards*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 100px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 30px);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-time {
+  font-size: 16px;
+}
+
+.a_button_w {
+  color: white;
+  text-decoration: none;
+}
+
+.a_button {
+  color: black;
+  text-decoration: none;
 }
