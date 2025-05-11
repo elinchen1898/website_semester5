@@ -1,0 +1,81 @@
+<body>
+
+  <h1>Account</h1>
+  <p>Welcome, {{user.username}}</p>
+  <h3>Your posts</h3>
+  <div class="Account">
+    <div class="">
+      <a href="/blogdetail/{{id}}">
+
+        <div
+          class="destination"
+          style="background-image: url(/uploads/{{bild1}});"
+        >
+          <h4 class="white">{{titel}}</h4>
+          <p class="white">{{untertitel}}</p>
+          <form
+            action="/like/{{id}}"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input
+              type="image"
+              src="/icons/herz.png"
+              class="heart_blog"
+              id="heartButton"
+            />
+          </form>
+        </div>
+
+      </a>
+    </div>
+
+  </div>
+
+  <h3 class="top">Liked posts</h3>
+  <!-- Code for displaying liked posts goes here -->
+  <div class="account">
+
+    <div class="">
+      <a href="/blogdetail/{{id}}">
+
+        <div
+          class="destination"
+          style="background-image: url(/uploads/{{bild1}});"
+        >
+          <h4 class="white">{{titel}}</h4>
+          <p class="white">{{untertitel}}</p>
+          <form
+            action="/like/{{id}}"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input
+              type="image"
+              src="/icons/herzred.png"
+              class="heart_blog"
+              id="heartButton"
+            />
+          </form>
+        </div>
+
+      </a>
+    </div>
+
+    <p>You have no posts.</p>
+
+  </div>
+
+  <div class="post">
+    <div class="form">
+      <a href="/post"><img src="/icons/upload.png" alt="icon post" /></a>
+    </div>
+  </div>
+
+  <div class="middle_button">
+    <a href="/login">
+      <button type="submit">Log out</button>
+    </a>
+  </div>
+
+</body>

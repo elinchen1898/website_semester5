@@ -1,29 +1,12 @@
-<div class="form-wrapper">
-  <div class="form-container">
-    <h1>Login</h1>
+<div class="container">
 
-    <h3>Please enter your login data</h3>
+    <h3 class="forms">Mitgliederbereich</h3>
 
-    <form action="/login" method="POST">
-      <div class="form">
-        <label for="username"><img
-            src="/icons/user.png"
-            alt="icon for user"
-          /></label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          placeholder="username"
-          required
-        />
-      </div>
+    <p>Bitte das Passwort unten eingeben.</p>
 
       <div class="form">
-        <label for="password"><img
-            src="/icons/padlock.png"
-            alt="icon for password"
-          /></label>
+        <p>Passwort</p>
+        <label for="password"></label>
         <input
           type="password"
           id="password"
@@ -33,11 +16,11 @@
         />
       </div>
 
-      <div class="form">
-        <button type="submit">Login</button>
+      <div class="middle_button">
+        <button class="button-cards" type="submit">Login</button>
       </div>
     </form>
 
-    <p>Don't have an account yet? <a href="/register">Register now!</a></p>
-  </div>
+    <p class="link">Noch keinen Zugriff?<a href="/anfrage">Jetzt Anfragen!</a></p>
+
 </div>

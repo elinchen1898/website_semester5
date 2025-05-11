@@ -1,28 +1,55 @@
-<html lang="en">
-
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HTML5 Boilerplate</title>
+    <title>BBZ Projekt - Geräteturnen</title>
     <link rel="stylesheet" href="/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .nav-link:hover { font-weight: 700; }
+
+    </style>
   </head>
 
   <body>
     <header>
-      <a href="/"> <img class="logo" src="/icons/airplane-svgrepo-com(1).svg"</a>
-      <a href="/login"><img class="persona" src="/icons/user.png" alt="user" /></a>
+      <a href="/">
+        <img class="logo" src="/icons/Getu_Logo_blau 1.png" alt="Logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/verein" class="nav-link">Verein</a></li>
+          <li><a href="/training" class="nav-link">Training</a></li>
+        </ul>
+      </nav>
+      <a href="/login">
+        <img class="user-icon" src="/icons/user.png" alt="Benutzer" />
+      </a>
     </header>
 
-    {{{body}}}
-  </body>
-  
-  <footer>
-    <a href="/impressum">Impressum</a>
-    </footer>
+    <div class="body">
+      {{{body}}}
+    </div>
 
+    <footer>
+      <div class="footer-logo">
+        <img src="/icons/Getu_Logo_blau 1.png" alt="Logo" />
+      </div>
+      <div class="address">
+        <a
+          href="https://www.google.ch/maps/place/Gartenstrasse+2,+4713+Matzendorf/@47.3059229,7.6286509,17z/data=!3m1!4b1!4m6!3m5!1s0x4791d10cd0dd084b:0x91ede35d0db489e8!8m2!3d47.3059193!4d7.6312258!16s%2Fg%2F11cs60pdvt?hl=de&entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D"
+        ><img src="/icons/ping.png" alt="Location Icon" />
+          <span>Gartenstrasse 2,<br />4713 Matzendorf</span>
+        </a>
+      </div>
+      <a href="/kontakt">Kontakt</a>
+      <a href="/impressum">Impressum</a>
+
+    </footer>
+  </body>
 
 </html>
