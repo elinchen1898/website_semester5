@@ -60,6 +60,9 @@ export function createApp(dbconfig) {
     res.render("mehrinfo");
   });
 
+  app.get("/anmelden", (req, res) => {
+    res.render("anmelden");
+  });
   app.get("/K1", (req, res) => {
     res.render("K1");
   });
