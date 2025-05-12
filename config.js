@@ -52,7 +52,7 @@ export function createApp(dbconfig) {
     res.render("Rangliste");
   });
 
-  app.get("/intern", (req, res) => {
+  app.post("/intern", (req, res) => {
     res.render("intern");
   });
 
