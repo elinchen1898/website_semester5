@@ -52,6 +52,14 @@ export function createApp(dbconfig) {
     res.render("Rangliste");
   });
 
+  app.get("/intern", (req, res) => {
+    res.render("intern");
+  });
+
+  app.get("/mehrinfo", (req, res) => {
+    res.render("mehrinfo");
+  });
+
   app.get("/K1", (req, res) => {
     res.render("K1");
   });

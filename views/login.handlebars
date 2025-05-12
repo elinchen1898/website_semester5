@@ -1,28 +1,25 @@
 <div class="container">
-
+  <div class="contact-form">
     <h3 class="forms">Mitgliederbereich</h3>
-
     <p>Bitte das Passwort unten eingeben.</p>
 
-      <div class="form">
-        <p>Passwort</p>
-        <label for="password"></label>
+    <form action="/login" method="POST">
+      <div class="email">
         <input
           type="password"
-          id="password"
           name="passwort"
-          placeholder="password"
+          class="full-width"
+          placeholder="Passwort"
           required
         />
       </div>
 
-      <div class="middle_button">
-        <button class="button-cards" type="submit">Login</button>
-      </div>
+      <button class="button">
+        <a href="/intern" class="a_button_w">Login</a>
+      </button>
     </form>
 
-    <p class="link"><a href="/anfrage">Noch keinen Zugriff? Jetzt Anfragen!</a></p>
-
+    <p class="link"><a href="/anfrage">Noch keine Zugriff? Jetzt Anfragen!</a></p>
+  </div>
 </div>
-
 <img src="/img/Buchstabe/m.png" alt="" class="background-letter" />

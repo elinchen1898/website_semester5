@@ -1,20 +1,36 @@
 <div class="container">
-
   <div class="contact-form">
     <h3 class="forms">Zugriff anfordern</h3>
     <p>Bitte geben Sie Ihre Daten an, damit wir Ihren Zugriff prüfen können.</p>
-    <form action="">
+
+    <form action="/anfrage" method="POST">
       <div class="form-group">
-        <input type="text" placeholder="Vorname" />
-        <input type="text" placeholder="Nachname" />
+        <input type="text" placeholder="Vorname" name="firstname" required />
+        <input type="text" placeholder="Nachname" name="lastname" required />
       </div>
+
       <div class="email">
-        <input type="email" class="full-width" placeholder="E-Mail Adresse" />
+        <input
+          type="email"
+          class="full-width"
+          placeholder="E-Mail"
+          name="email"
+          required
+        />
       </div>
-      <textarea placeholder="Geben Sie hier ihre Begründung ein"></textarea>
-      <button class="button">Zugriff anfordern</button>
+
+      <textarea
+        placeholder="Zugriff begründen"
+        name="message"
+        required
+        class="bugfix_anfordern"
+      ></textarea>
+
+      <button class="button"><a href="/login" class="a_button_w">Zugriff
+          anfordern</a>
+      </button>
     </form>
   </div>
-
 </div>
+
 <img src="/img/Buchstabe/z.png" alt="" class="background-letter" />
