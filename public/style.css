@@ -64,7 +64,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 30px 100px 30px 30px;
   margin-top: 50px;
   background-color: #667277;
   font-weight: regular;
@@ -76,12 +76,23 @@ footer {
 footer a {
   color: #fff;
   text-decoration: none;
+  font-size: 12pt;
+  font-weight: 400;
 }
 
-.address {
+.footer a:hover {
+  color: #d4d4d4;
+}
+
+.address p {
+  font-size: 12pt;
+  font-weight: 400;
+  width: 100%;
+}
+
+.address a {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start;
   color: #fff;
 }
 
