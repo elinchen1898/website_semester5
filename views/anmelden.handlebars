@@ -1,3 +1,7 @@
+<script>
+  function zeigePopup() { alert("Erfolgreiche Anmeldung"); }
+</script>
+
 <body>
 
   <div class="container">
@@ -20,7 +24,10 @@
           required
         />
         <br />
-        <button type="submit" class="button">Anmelden</button>
+
+        <button type="submit" class="button" onclick="zeigePopup()">
+          Anmelden
+        </button>
       </form>
       <div id="successMsg" class="success"></div>
     </div>

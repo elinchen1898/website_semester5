@@ -145,6 +145,7 @@ h2 {
   color: #3d4c53;
   font-size: 50px;
   font-weight: 900;
+  margin: 10 0;
 }
 h3.white {
   color: #fff;
@@ -167,7 +168,7 @@ h3.black {
   color: #000000;
   font-weight: 300;
   font-size: 20px;
-  margin-top: -30px;
+  margin-top: -10px;
   padding-bottom: 40px;
 }
 
@@ -654,6 +655,10 @@ textarea {
   z-index: -1;
 }
 
+.background-letter_speziell {
+  width: 20%;
+}
+
 .background-letter_K {
   position: absolute;
   top: 0;
@@ -874,6 +879,7 @@ textarea {
   line-height: 1.5;
   margin-top: 0;
   max-width: 820px;
+  margin-bottom: -50px;
 }
 
 /* Flex Container für News Cards */
